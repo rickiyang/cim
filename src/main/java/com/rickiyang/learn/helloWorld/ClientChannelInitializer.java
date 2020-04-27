@@ -6,11 +6,13 @@ import io.netty.channel.socket.SocketChannel;
 import io.netty.handler.codec.string.StringDecoder;
 import io.netty.handler.codec.string.StringEncoder;
 
+
 /**
- * Created by Administrator on 2017/3/11.
+ * Initializer
  */
 public class ClientChannelInitializer extends  ChannelInitializer<SocketChannel> {
 
+    @Override
     protected void initChannel(SocketChannel socketChannel) throws Exception {
         ChannelPipeline pipeline = socketChannel.pipeline();
 
