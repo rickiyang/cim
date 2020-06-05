@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.rickiyang.learn</groupId>
+        <artifactId>netty-learn</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+    <groupId>com.netty.learn</groupId>
+    <artifactId>demo-code</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>demo-code</name>
+    <description>Demo project for Spring Boot</description>
+
+    <properties>
+        <java.version>1.8</java.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+
+        <pluginManagement>
+            <plugins>
+                <!--mvn protobuf:compile-->
+                <plugin>
+                    <groupId>org.xolstice.maven.plugins</groupId>
+                    <artifactId>protobuf-maven-plugin</artifactId>
+                    <version>0.5.1</version>
+                    <configuration>
+                        <additionalProtoPathElements>
+                            <!--<additionalProtoPathElement>${project.basedir}/src/main/java/com/yy/liveplatform/proto</additionalProtoPathElement>-->
+                        </additionalProtoPathElements>
+                        <!--        <protocArtifact>com.google.protobuf:protoc:${protobuf.version}:exe:${os.detected.classifier}
+                                </protocArtifact>-->
+                        <protoSourceRoot>src/main/java/com/netty/learn/pbDemo</protoSourceRoot>
+                        <!--默认值-->
+                        <outputDirectory>${project.build.sourceDirectory}</outputDirectory>
+                        <!--设置是否在生成java文件之前清空outputDirectory的文件，默认值为true，设置为false时也会覆盖同名文件-->
+                        <clearOutputDirectory>false</clearOutputDirectory>
+                        <!--更多配置信息可以查看https://www.xolstice.org/protobuf-maven-plugin/compile-mojo.html-->
+                        <includes>
+                            <include>msg_entity.proto</include>
+                        </includes>
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <goals>
+                                <goal>compile</goal>
+                                <goal>test-compile</goal>
+                            </goals>
+                            <!--也可以设置成局部变量，执行compile或test-compile时才执行-->
+                            <!--<configuration>-->
+                            <!--<protoSourceRoot>${project.basedir}/src/main/proto</protoSourceRoot>-->
+                            <!--<outputDirectory>${project.build.directory}/generated-sources/protobuf/java</outputDirectory>-->
+                            <!--<temporaryProtoFileDirectory>${project.build.directory}/protoc-dependencies</temporaryProtoFileDirectory>-->
+                            <!--</configuration>-->
+                        </execution>
+                    </executions>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+
+</project>
