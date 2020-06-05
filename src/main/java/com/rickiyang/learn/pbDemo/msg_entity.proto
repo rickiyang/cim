@@ -1,0 +1,8 @@
+syntax = "proto3";
+package com.rickiyang.learn.pbDemo;
+option objc_class_prefix = "MsgEntity"; // OC专用，指定类前缀，其他语言不生效
+
+message MsgBodyReq {
+    int32 type = 1;//消息类型
+    string message = 2;//消息内容
+}

@@ -15,5 +15,7 @@ public class MainTest {
         message.writeBytes("1".getBytes());
         byte[] req = new byte[message.readableBytes()];
         System.out.println(1);
+        byte aa = 0x00000C;
+        System.out.println(Byte.valueOf(aa).intValue());
     }
 }
