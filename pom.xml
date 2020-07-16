@@ -6,17 +6,26 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.2.5.RELEASE</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <relativePath/>
     </parent>
+
+    <packaging>pom</packaging>
+
+
     <groupId>com.rickiyang.learn</groupId>
-    <artifactId>netty-learn</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <name>netty-learn</name>
-    <description>Demo project for Spring Boot</description>
+    <artifactId>rim</artifactId>
+    <version>1.0.0</version>
+    <name>rim</name>
 
     <properties>
         <java.version>1.8</java.version>
     </properties>
+
+    <modules>
+        <module>rim-common</module>
+        <module>rim-server</module>
+        <module>rim-client</module>
+    </modules>
 
     <dependencies>
         <dependency>
@@ -84,6 +93,11 @@
             <artifactId>lombok</artifactId>
             <version>1.16.20</version>
         </dependency>
+        <dependency>
+            <groupId>com.google.protobuf</groupId>
+            <artifactId>protobuf-java</artifactId>
+            <version>3.5.1</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -93,6 +107,41 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
         </plugins>
+
+        <pluginManagement>
+            <plugins>
+                <!--mvn protobuf:compile-->
+                <plugin>
+                    <groupId>org.xolstice.maven.plugins</groupId>
+                    <artifactId>protobuf-maven-plugin</artifactId>
+                    <version>0.5.1</version>
+                    <configuration>
+                        <additionalProtoPathElements>
+                            <!--<additionalProtoPathElement>${project.basedir}/src/main/java/com/yy/liveplatform/proto</additionalProtoPathElement>-->
+                        </additionalProtoPathElements>
+                        <!--<protocArtifact>com.google.protobuf:protoc:${protobuf.version}:exe:${os.detected.classifier}</protocArtifact>-->
+                        <protoSourceRoot>src/main/java/com/rim/protocol/pb</protoSourceRoot>
+                        <!--默认值-->
+                        <outputDirectory>${project.build.sourceDirectory}</outputDirectory>
+                        <!--设置是否在生成java文件之前清空outputDirectory的文件，默认值为true，设置为false时也会覆盖同名文件-->
+                        <clearOutputDirectory>false</clearOutputDirectory>
+                        <includes>
+                            <include>im_chat.proto</include>
+                        </includes>
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <goals>
+                                <goal>compile</goal>
+                                <goal>test-compile</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+            </plugins>
+        </pluginManagement>
     </build>
+
+
 
 </project>

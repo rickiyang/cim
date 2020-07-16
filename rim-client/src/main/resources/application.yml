@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: rim-client
+server:
+  port: 7084
+
+
+
+netty:
+  host: 127.0.0.1
+  port: 7788

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="DEBUG">
+    <!--变量配置-->
+    <Properties>
+        <!-- 格式化输出：%date表示日期，%thread表示线程名，%-5level：级别从左显示5个字符宽度 %msg：日志消息，%n是换行符-->
+        <!-- %logger{36} 表示 Logger 名字最长36个字符 -->
+        <property name="CONSOLE_LOG_PATTERN" value="[%d{MM-dd HH:mm:ss,SSS} %-5p] [traceId:%X{traceId}] [%t] %c{2.} - %m%n%ex" />
+        <property name="LOG_PATTERN" value="[%d{MM-dd HH:mm:ss SSS} %-5level] [traceId:%X{traceId}] [%t] %c - %m %ex%n" />
+
+        <!-- 定义日志存储的路径，不要配置相对路径 -->
+        <property name="FILE_PATH" value="/Users/yangyue/log/rim-server" />
+        <property name="FILE_NAME" value="springBootLearn" />
+    </Properties>
+
+    <Appenders>
+        <Console name="myConsole" target="SYSTEM_OUT">
+            <PatternLayout pattern="${CONSOLE_LOG_PATTERN}" />
+            <!--控制台只输出level及其以上级别的信息（onMatch），其他的直接拒绝（onMismatch）-->
+            <ThresholdFilter level="info" onMatch="ACCEPT" onMismatch="DENY"/>
+        </Console>
+
+<!--        <RollingFile name="infoAppender" fileName="${FILE_PATH}/info.log"-->
+<!--                     filePattern="${FILE_PATH}/info.log.%d{yyyy-MM-dd-HH}.log">-->
+<!--            <PatternLayout>-->
+<!--                <Pattern>${LOG_PATTERN}</Pattern>-->
+<!--            </PatternLayout>-->
+<!--            <ThresholdFilter level="info" onMatch="ACCEPT" onMismatch="DENY"/>-->
+<!--            <Policies>-->
+<!--                <TimeBasedTriggeringPolicy/>-->
+<!--            </Policies>-->
+<!--        </RollingFile>-->
+
+<!--        <RollingFile name="errorAppender" fileName="${FILE_PATH}/error.log"-->
+<!--                     filePattern="${FILE_PATH}/error.log.%d{yyyy-MM-dd}.log">-->
+<!--            <PatternLayout>-->
+<!--                <Pattern>${LOG_PATTERN}</Pattern>-->
+<!--            </PatternLayout>-->
+<!--            <ThresholdFilter level="error" onMatch="ACCEPT" onMismatch="DENY"/>-->
+<!--            <Policies>-->
+<!--                <TimeBasedTriggeringPolicy/>-->
+<!--            </Policies>-->
+<!--        </RollingFile>-->
+
+<!--        <RollingFile name="remoteAppender" fileName="${FILE_PATH}/process_remote.log"-->
+<!--                     filePattern="${FILE_PATH}/process_remote.log.%d{yyyy-MM-dd}.log">-->
+<!--            <PatternLayout>-->
+<!--                <Pattern>${LOG_PATTERN}</Pattern>-->
+<!--            </PatternLayout>-->
+<!--            <ThresholdFilter level="info" onMatch="ACCEPT" onMismatch="DENY"/>-->
+<!--            <Policies>-->
+<!--                <TimeBasedTriggeringPolicy/>-->
+<!--            </Policies>-->
+<!--        </RollingFile>-->
+
+    </Appenders>
+
+    <Loggers>
+
+        <Root level="info">
+            <AppenderRef ref="infoAppender"/>
+            <appender-ref ref="myConsole"/>
+        </Root>
+
+        <logger name="info.do" level="INFO" additivity="false">
+            <appender-ref ref="infoAppender"/>
+        </logger>
+
+        <logger name="error.do" level="ERROR" additivity="false">
+            <appender-ref ref="errorAppender"/>
+        </logger>
+
+        <logger name="remote.do" level="INFO" additivity="false">
+            <appender-ref ref="remoteAppender"/>
+        </logger>
+    </Loggers>
+
+</Configuration>

@@ -1,0 +1,151 @@
+syntax = "proto3";
+package com.rim.protocol.protobuf;
+option objc_class_prefix = "ImChat"; // OC专用，指定类前缀，其他语言不生效
+
+//消息定义：
+
+//消息头：
+
+//消息大类型：心跳消息，连接确认消息，正文消息
+//消息小类型：文本消息，图片消息，语音消息，视频消息
+//消息发送类型：群聊，单聊，批量发送
+//消息长度
+//
+//
+//消息体：
+
+//消息id id要在当前会话中递增，全局唯一
+//发送人
+//接收人
+//消息内容
+
+//返回值：
+//消息阅读状态： 已读，未读
+
+//请求头
+message ChatHeader {
+    int32 bType = 1; //消息大类
+    int32 sType = 2; //消息小类
+    int32 cType = 3; //消息发送类型
+}
+
+//单聊请求
+message ImChatReq {
+    ChatHeader header = 1; //请求头
+    ImChatBody body = 2; //请求体
+}
+
+message ImChatBody {
+    /**
+    * 消息序列号
+    */
+     string reqId = 1;
+    /**
+     * 发送客户端唯一标识
+     */
+    string clientId = 2;
+    /**
+     * 发送者
+     */
+    int64 sendUid = 3;
+    /**
+     * 接收者
+     */
+    int64 recvUid = 4;
+    /**
+     * 消息内容
+     */
+    string content = 5;
+    /**
+     * 客户端发送消息时间戳
+     */
+    int64 sendTimeStamp = 6;
+    /**
+     * 接收者 多个
+     */
+    repeated int64 recvUids = 7;
+    /**
+     * 群聊id
+     */
+    string groupId = 8;
+}
+
+//1v1消息返回体
+message One2OneImChatResp {
+    ChatHeader header = 1; //请求头
+    int32 code = 2; //返回码
+    string message = 3; //提示
+}
+
+//1对多请求
+message One2MoreImChatReq {
+
+    ChatHeader header = 1; //请求头
+    One2MoreChatBody body = 2; //请求体
+}
+
+//1对多
+message One2MoreChatBody {
+    string reqId = 1; //消息序列号
+    int64 sendUid = 2; //发送者
+    repeated int64 recvUids = 3; //接收者
+    string content = 4; //消息内容
+    int64 sendTimeStamp = 5; //客户端发送消息时间戳
+}
+
+//1v多消息返回体
+message One2MoreImChatResp {
+    ChatHeader header = 1; //请求头
+    int32 code = 2; //返回码
+    string message = 3; //提示
+}
+
+//群聊请求
+message GroupImChatReq {
+    ChatHeader header = 1; //请求头
+    GroupChatBody body = 2; //请求体
+}
+
+//群聊
+message GroupChatBody {
+    string reqId = 1; //消息序列号
+    string groupId = 2; //群id
+    int64 sendUid = 3; //发送者
+    string content = 4; //消息内容
+    int64 sendTimeStamp = 5; //客户端发送消息时间戳
+}
+
+//群聊消息返回体
+message GroupImChatResp {
+    ChatHeader header = 1; //请求头
+    int32 code = 2; //返回码
+    string message = 3; //提示
+}
+
+
+//坑：枚举类型：不支持一个proto文件中，多个枚举中定义相同的枚举常量名
+//消息大类：心跳消息，正文消息
+enum AckEnum {
+    UNKNOWN1 = 0;//proto3必须要有这个0,但实际用不到
+    LOGIN_REQ = 1;// 登录包
+    PING = 2;//心跳包
+    PONG = 3;//心跳响应包
+    REAL = 4;//正文消息包
+}
+
+//文本消息，图片消息，语音消息，视频消息
+enum ContentTypeEnum {
+    UNKNOWN2 = 0;
+    TEXT = 1;//普通文本消息
+    PIC = 2;//图片消息
+    AUDIO = 3;//音频消息
+    VIDEO = 4;//视频消息
+}
+
+//群聊，单聊，批量发送
+enum ChatTypeEnum {
+    UNKNOWN3 = 0;
+    ONE2ONE = 1;//1对1
+    GROUP = 2;//群聊
+    ONE2MORE = 3;//1对多
+}
