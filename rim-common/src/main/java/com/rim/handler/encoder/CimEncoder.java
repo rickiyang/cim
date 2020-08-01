@@ -1,4 +1,4 @@
-package com.rim.handler;
+package com.rim.handler.encoder;
 
 import com.alibaba.fastjson.JSON;
 import com.rim.message.ImBody;

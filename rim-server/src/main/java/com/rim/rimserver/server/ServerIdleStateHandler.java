@@ -3,6 +3,7 @@ package com.rim.rimserver.server;
 import io.netty.channel.ChannelFutureListener;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
+import io.netty.handler.timeout.IdleState;
 import io.netty.handler.timeout.IdleStateEvent;
 import lombok.extern.slf4j.Slf4j;
 
@@ -23,15 +24,18 @@ public class ServerIdleStateHandler extends ChannelInboundHandlerAdapter {
     @Override
     public void userEventTriggered(final ChannelHandlerContext ctx, Object evt) throws Exception {
         if (evt instanceof IdleStateEvent) {
-            final IdleStateEvent e = (IdleStateEvent) evt;
-            final SocketAddress socketAddress = ctx.channel().remoteAddress();
-            ctx.channel().close().addListener((ChannelFutureListener) future -> {
-                if (future.isSuccess()) {
-                    log.info("close idle connect:" + socketAddress + " for " + e.state() + " done");
-                } else {
-                    log.info("close idle connect:" + socketAddress + " for " + e.state() + " fail");
-                }
-            });
+            IdleStateEvent event = (IdleStateEvent)evt;
+            if (event.state() == IdleState.READER_IDLE) {
+                final IdleStateEvent e = (IdleStateEvent) evt;
+                final SocketAddress socketAddress = ctx.channel().remoteAddress();
+                ctx.channel().close().addListener((ChannelFutureListener) future -> {
+                    if (future.isSuccess()) {
+                        log.info("close idle connect:" + socketAddress + " for " + e.state() + " done");
+                    } else {
+                        log.info("close idle connect:" + socketAddress + " for " + e.state() + " fail");
+                    }
+                });
+            }
         }
         super.userEventTriggered(ctx, evt);
     }

@@ -1,7 +1,9 @@
 package com.rim.rimclient.client;
 
-import com.rim.handler.CimDecoder;
-import com.rim.handler.CimEncoder;
+import com.rim.handler.decoder.CimDecoder;
+import com.rim.handler.decoder.ProtoBufDecoder;
+import com.rim.handler.encoder.CimEncoder;
+import com.rim.handler.encoder.ProtoBufEncoder;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelInitializer;
 import io.netty.handler.timeout.IdleStateHandler;
@@ -19,8 +21,10 @@ public class ClientHandlerInitializer extends ChannelInitializer<Channel> {
     protected void initChannel(Channel ch) throws Exception {
         ch.pipeline()
                 .addLast(new CimDecoder())
+                .addLast(new ProtoBufDecoder())
                 .addLast(new CimEncoder())
-                .addLast(new IdleStateHandler(0, 10, 0, TimeUnit.SECONDS))
+                .addLast(new ProtoBufEncoder())
+                .addLast(new IdleStateHandler(0, 4, 0, TimeUnit.SECONDS))
                 .addLast(new HeartbeatHandler())
                 .addLast(new NettyClientHandler());
     }

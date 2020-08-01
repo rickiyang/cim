@@ -15,7 +15,7 @@ public final class MsgEntity {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   public interface MsgBodyReqOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:com.rickiyang.learn.pbDemo.MsgBodyReq)
+      // @@protoc_insertion_point(interface_extends:com.netty.learn.pbDemo.MsgBodyReq)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -34,7 +34,7 @@ public final class MsgEntity {
      *
      * <code>string message = 2;</code>
      */
-    String getMessage();
+    java.lang.String getMessage();
     /**
      * <pre>
      *消息内容
@@ -46,11 +46,11 @@ public final class MsgEntity {
         getMessageBytes();
   }
   /**
-   * Protobuf type {@code com.rickiyang.learn.pbDemo.MsgBodyReq}
+   * Protobuf type {@code com.netty.learn.pbDemo.MsgBodyReq}
    */
   public  static final class MsgBodyReq extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:com.rickiyang.learn.pbDemo.MsgBodyReq)
+      // @@protoc_insertion_point(message_implements:com.netty.learn.pbDemo.MsgBodyReq)
       MsgBodyReqOrBuilder {
   private static final long serialVersionUID = 0L;
     // Use MsgBodyReq.newBuilder() to construct.
@@ -62,7 +62,7 @@ public final class MsgEntity {
       message_ = "";
     }
 
-    @Override
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -73,7 +73,7 @@ public final class MsgEntity {
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
       if (extensionRegistry == null) {
-        throw new NullPointerException();
+        throw new java.lang.NullPointerException();
       }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
@@ -99,7 +99,7 @@ public final class MsgEntity {
               break;
             }
             case 18: {
-              String s = input.readStringRequireUtf8();
+              java.lang.String s = input.readStringRequireUtf8();
 
               message_ = s;
               break;
@@ -118,14 +118,14 @@ public final class MsgEntity {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.rickiyang.learn.pbDemo.MsgEntity.internal_static_com_rickiyang_learn_pbDemo_MsgBodyReq_descriptor;
+      return com.netty.learn.pbDemo.MsgEntity.internal_static_com_netty_learn_pbDemo_MsgBodyReq_descriptor;
     }
 
-    protected FieldAccessorTable
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.rickiyang.learn.pbDemo.MsgEntity.internal_static_com_rickiyang_learn_pbDemo_MsgBodyReq_fieldAccessorTable
+      return com.netty.learn.pbDemo.MsgEntity.internal_static_com_netty_learn_pbDemo_MsgBodyReq_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.rickiyang.learn.pbDemo.MsgEntity.MsgBodyReq.class, com.rickiyang.learn.pbDemo.MsgEntity.MsgBodyReq.Builder.class);
+              com.netty.learn.pbDemo.MsgEntity.MsgBodyReq.class, com.netty.learn.pbDemo.MsgEntity.MsgBodyReq.Builder.class);
     }
 
     public static final int TYPE_FIELD_NUMBER = 1;
@@ -142,7 +142,7 @@ public final class MsgEntity {
     }
 
     public static final int MESSAGE_FIELD_NUMBER = 2;
-    private volatile Object message_;
+    private volatile java.lang.Object message_;
     /**
      * <pre>
      *消息内容
@@ -150,14 +150,14 @@ public final class MsgEntity {
      *
      * <code>string message = 2;</code>
      */
-    public String getMessage() {
-      Object ref = message_;
-      if (ref instanceof String) {
-        return (String) ref;
+    public java.lang.String getMessage() {
+      java.lang.Object ref = message_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs =
+        com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        java.lang.String s = bs.toStringUtf8();
         message_ = s;
         return s;
       }
@@ -171,11 +171,11 @@ public final class MsgEntity {
      */
     public com.google.protobuf.ByteString
         getMessageBytes() {
-      Object ref = message_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
+      java.lang.Object ref = message_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
         message_ = b;
         return b;
       } else {
@@ -221,15 +221,15 @@ public final class MsgEntity {
       return size;
     }
 
-    @Override
-    public boolean equals(final Object obj) {
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.rickiyang.learn.pbDemo.MsgEntity.MsgBodyReq)) {
+      if (!(obj instanceof com.netty.learn.pbDemo.MsgEntity.MsgBodyReq)) {
         return super.equals(obj);
       }
-      com.rickiyang.learn.pbDemo.MsgEntity.MsgBodyReq other = (com.rickiyang.learn.pbDemo.MsgEntity.MsgBodyReq) obj;
+      com.netty.learn.pbDemo.MsgEntity.MsgBodyReq other = (com.netty.learn.pbDemo.MsgEntity.MsgBodyReq) obj;
 
       boolean result = true;
       result = result && (getType()
@@ -240,7 +240,7 @@ public final class MsgEntity {
       return result;
     }
 
-    @Override
+    @java.lang.Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -256,69 +256,69 @@ public final class MsgEntity {
       return hash;
     }
 
-    public static com.rickiyang.learn.pbDemo.MsgEntity.MsgBodyReq parseFrom(
+    public static com.netty.learn.pbDemo.MsgEntity.MsgBodyReq parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.rickiyang.learn.pbDemo.MsgEntity.MsgBodyReq parseFrom(
+    public static com.netty.learn.pbDemo.MsgEntity.MsgBodyReq parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.rickiyang.learn.pbDemo.MsgEntity.MsgBodyReq parseFrom(
+    public static com.netty.learn.pbDemo.MsgEntity.MsgBodyReq parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.rickiyang.learn.pbDemo.MsgEntity.MsgBodyReq parseFrom(
+    public static com.netty.learn.pbDemo.MsgEntity.MsgBodyReq parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.rickiyang.learn.pbDemo.MsgEntity.MsgBodyReq parseFrom(byte[] data)
+    public static com.netty.learn.pbDemo.MsgEntity.MsgBodyReq parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.rickiyang.learn.pbDemo.MsgEntity.MsgBodyReq parseFrom(
+    public static com.netty.learn.pbDemo.MsgEntity.MsgBodyReq parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.rickiyang.learn.pbDemo.MsgEntity.MsgBodyReq parseFrom(java.io.InputStream input)
+    public static com.netty.learn.pbDemo.MsgEntity.MsgBodyReq parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.rickiyang.learn.pbDemo.MsgEntity.MsgBodyReq parseFrom(
+    public static com.netty.learn.pbDemo.MsgEntity.MsgBodyReq parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.rickiyang.learn.pbDemo.MsgEntity.MsgBodyReq parseDelimitedFrom(java.io.InputStream input)
+    public static com.netty.learn.pbDemo.MsgEntity.MsgBodyReq parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.rickiyang.learn.pbDemo.MsgEntity.MsgBodyReq parseDelimitedFrom(
+    public static com.netty.learn.pbDemo.MsgEntity.MsgBodyReq parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.rickiyang.learn.pbDemo.MsgEntity.MsgBodyReq parseFrom(
+    public static com.netty.learn.pbDemo.MsgEntity.MsgBodyReq parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.rickiyang.learn.pbDemo.MsgEntity.MsgBodyReq parseFrom(
+    public static com.netty.learn.pbDemo.MsgEntity.MsgBodyReq parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -330,7 +330,7 @@ public final class MsgEntity {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.rickiyang.learn.pbDemo.MsgEntity.MsgBodyReq prototype) {
+    public static Builder newBuilder(com.netty.learn.pbDemo.MsgEntity.MsgBodyReq prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -338,38 +338,38 @@ public final class MsgEntity {
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override
+    @java.lang.Override
     protected Builder newBuilderForType(
-        BuilderParent parent) {
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
     /**
-     * Protobuf type {@code com.rickiyang.learn.pbDemo.MsgBodyReq}
+     * Protobuf type {@code com.netty.learn.pbDemo.MsgBodyReq}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:com.rickiyang.learn.pbDemo.MsgBodyReq)
-        com.rickiyang.learn.pbDemo.MsgEntity.MsgBodyReqOrBuilder {
+        // @@protoc_insertion_point(builder_implements:com.netty.learn.pbDemo.MsgBodyReq)
+        com.netty.learn.pbDemo.MsgEntity.MsgBodyReqOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.rickiyang.learn.pbDemo.MsgEntity.internal_static_com_rickiyang_learn_pbDemo_MsgBodyReq_descriptor;
+        return com.netty.learn.pbDemo.MsgEntity.internal_static_com_netty_learn_pbDemo_MsgBodyReq_descriptor;
       }
 
-      protected FieldAccessorTable
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.rickiyang.learn.pbDemo.MsgEntity.internal_static_com_rickiyang_learn_pbDemo_MsgBodyReq_fieldAccessorTable
+        return com.netty.learn.pbDemo.MsgEntity.internal_static_com_netty_learn_pbDemo_MsgBodyReq_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.rickiyang.learn.pbDemo.MsgEntity.MsgBodyReq.class, com.rickiyang.learn.pbDemo.MsgEntity.MsgBodyReq.Builder.class);
+                com.netty.learn.pbDemo.MsgEntity.MsgBodyReq.class, com.netty.learn.pbDemo.MsgEntity.MsgBodyReq.Builder.class);
       }
 
-      // Construct using com.rickiyang.learn.pbDemo.MsgEntity.MsgBodyReq.newBuilder()
+      // Construct using com.netty.learn.pbDemo.MsgEntity.MsgBodyReq.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
 
       private Builder(
-          BuilderParent parent) {
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -389,23 +389,23 @@ public final class MsgEntity {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.rickiyang.learn.pbDemo.MsgEntity.internal_static_com_rickiyang_learn_pbDemo_MsgBodyReq_descriptor;
+        return com.netty.learn.pbDemo.MsgEntity.internal_static_com_netty_learn_pbDemo_MsgBodyReq_descriptor;
       }
 
-      public com.rickiyang.learn.pbDemo.MsgEntity.MsgBodyReq getDefaultInstanceForType() {
-        return com.rickiyang.learn.pbDemo.MsgEntity.MsgBodyReq.getDefaultInstance();
+      public com.netty.learn.pbDemo.MsgEntity.MsgBodyReq getDefaultInstanceForType() {
+        return com.netty.learn.pbDemo.MsgEntity.MsgBodyReq.getDefaultInstance();
       }
 
-      public com.rickiyang.learn.pbDemo.MsgEntity.MsgBodyReq build() {
-        com.rickiyang.learn.pbDemo.MsgEntity.MsgBodyReq result = buildPartial();
+      public com.netty.learn.pbDemo.MsgEntity.MsgBodyReq build() {
+        com.netty.learn.pbDemo.MsgEntity.MsgBodyReq result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public com.rickiyang.learn.pbDemo.MsgEntity.MsgBodyReq buildPartial() {
-        com.rickiyang.learn.pbDemo.MsgEntity.MsgBodyReq result = new com.rickiyang.learn.pbDemo.MsgEntity.MsgBodyReq(this);
+      public com.netty.learn.pbDemo.MsgEntity.MsgBodyReq buildPartial() {
+        com.netty.learn.pbDemo.MsgEntity.MsgBodyReq result = new com.netty.learn.pbDemo.MsgEntity.MsgBodyReq(this);
         result.type_ = type_;
         result.message_ = message_;
         onBuilt();
@@ -417,7 +417,7 @@ public final class MsgEntity {
       }
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
       public Builder clearField(
@@ -430,25 +430,25 @@ public final class MsgEntity {
       }
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
+          int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.rickiyang.learn.pbDemo.MsgEntity.MsgBodyReq) {
-          return mergeFrom((com.rickiyang.learn.pbDemo.MsgEntity.MsgBodyReq)other);
+        if (other instanceof com.netty.learn.pbDemo.MsgEntity.MsgBodyReq) {
+          return mergeFrom((com.netty.learn.pbDemo.MsgEntity.MsgBodyReq)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.rickiyang.learn.pbDemo.MsgEntity.MsgBodyReq other) {
-        if (other == com.rickiyang.learn.pbDemo.MsgEntity.MsgBodyReq.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.netty.learn.pbDemo.MsgEntity.MsgBodyReq other) {
+        if (other == com.netty.learn.pbDemo.MsgEntity.MsgBodyReq.getDefaultInstance()) return this;
         if (other.getType() != 0) {
           setType(other.getType());
         }
@@ -469,11 +469,11 @@ public final class MsgEntity {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.rickiyang.learn.pbDemo.MsgEntity.MsgBodyReq parsedMessage = null;
+        com.netty.learn.pbDemo.MsgEntity.MsgBodyReq parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.rickiyang.learn.pbDemo.MsgEntity.MsgBodyReq) e.getUnfinishedMessage();
+          parsedMessage = (com.netty.learn.pbDemo.MsgEntity.MsgBodyReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -502,7 +502,7 @@ public final class MsgEntity {
        * <code>int32 type = 1;</code>
        */
       public Builder setType(int value) {
-
+        
         type_ = value;
         onChanged();
         return this;
@@ -515,13 +515,13 @@ public final class MsgEntity {
        * <code>int32 type = 1;</code>
        */
       public Builder clearType() {
-
+        
         type_ = 0;
         onChanged();
         return this;
       }
 
-      private Object message_ = "";
+      private java.lang.Object message_ = "";
       /**
        * <pre>
        *消息内容
@@ -529,16 +529,16 @@ public final class MsgEntity {
        *
        * <code>string message = 2;</code>
        */
-      public String getMessage() {
-        Object ref = message_;
-        if (!(ref instanceof String)) {
+      public java.lang.String getMessage() {
+        java.lang.Object ref = message_;
+        if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
+          java.lang.String s = bs.toStringUtf8();
           message_ = s;
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
       /**
@@ -550,11 +550,11 @@ public final class MsgEntity {
        */
       public com.google.protobuf.ByteString
           getMessageBytes() {
-        Object ref = message_;
+        java.lang.Object ref = message_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
+                  (java.lang.String) ref);
           message_ = b;
           return b;
         } else {
@@ -569,11 +569,11 @@ public final class MsgEntity {
        * <code>string message = 2;</code>
        */
       public Builder setMessage(
-          String value) {
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-
+  
         message_ = value;
         onChanged();
         return this;
@@ -586,7 +586,7 @@ public final class MsgEntity {
        * <code>string message = 2;</code>
        */
       public Builder clearMessage() {
-
+        
         message_ = getDefaultInstance().getMessage();
         onChanged();
         return this;
@@ -604,7 +604,7 @@ public final class MsgEntity {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-
+        
         message_ = value;
         onChanged();
         return this;
@@ -620,16 +620,16 @@ public final class MsgEntity {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:com.rickiyang.learn.pbDemo.MsgBodyReq)
+      // @@protoc_insertion_point(builder_scope:com.netty.learn.pbDemo.MsgBodyReq)
     }
 
-    // @@protoc_insertion_point(class_scope:com.rickiyang.learn.pbDemo.MsgBodyReq)
-    private static final com.rickiyang.learn.pbDemo.MsgEntity.MsgBodyReq DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:com.netty.learn.pbDemo.MsgBodyReq)
+    private static final com.netty.learn.pbDemo.MsgEntity.MsgBodyReq DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.rickiyang.learn.pbDemo.MsgEntity.MsgBodyReq();
+      DEFAULT_INSTANCE = new com.netty.learn.pbDemo.MsgEntity.MsgBodyReq();
     }
 
-    public static com.rickiyang.learn.pbDemo.MsgEntity.MsgBodyReq getDefaultInstance() {
+    public static com.netty.learn.pbDemo.MsgEntity.MsgBodyReq getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -647,22 +647,22 @@ public final class MsgEntity {
       return PARSER;
     }
 
-    @Override
+    @java.lang.Override
     public com.google.protobuf.Parser<MsgBodyReq> getParserForType() {
       return PARSER;
     }
 
-    public com.rickiyang.learn.pbDemo.MsgEntity.MsgBodyReq getDefaultInstanceForType() {
+    public com.netty.learn.pbDemo.MsgEntity.MsgBodyReq getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_rickiyang_learn_pbDemo_MsgBodyReq_descriptor;
-  private static final
+    internal_static_com_netty_learn_pbDemo_MsgBodyReq_descriptor;
+  private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_rickiyang_learn_pbDemo_MsgBodyReq_fieldAccessorTable;
+      internal_static_com_netty_learn_pbDemo_MsgBodyReq_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -671,10 +671,10 @@ public final class MsgEntity {
   private static  com.google.protobuf.Descriptors.FileDescriptor
       descriptor;
   static {
-    String[] descriptorData = {
-      "\n\020msg_entity.proto\022\032com.rickiyang.learn." +
-      "pbDemo\"+\n\nMsgBodyReq\022\014\n\004type\030\001 \001(\005\022\017\n\007me" +
-      "ssage\030\002 \001(\tB\014\242\002\tMsgEntityb\006proto3"
+    java.lang.String[] descriptorData = {
+      "\n\020msg_entity.proto\022\026com.netty.learn.pbDe" +
+      "mo\"+\n\nMsgBodyReq\022\014\n\004type\030\001 \001(\005\022\017\n\007messag" +
+      "e\030\002 \001(\tB\014\242\002\tMsgEntityb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -688,12 +688,12 @@ public final class MsgEntity {
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         }, assigner);
-    internal_static_com_rickiyang_learn_pbDemo_MsgBodyReq_descriptor =
+    internal_static_com_netty_learn_pbDemo_MsgBodyReq_descriptor =
       getDescriptor().getMessageTypes().get(0);
-    internal_static_com_rickiyang_learn_pbDemo_MsgBodyReq_fieldAccessorTable = new
+    internal_static_com_netty_learn_pbDemo_MsgBodyReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_rickiyang_learn_pbDemo_MsgBodyReq_descriptor,
-        new String[] { "Type", "Message", });
+        internal_static_com_netty_learn_pbDemo_MsgBodyReq_descriptor,
+        new java.lang.String[] { "Type", "Message", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

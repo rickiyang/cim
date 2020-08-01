@@ -1,4 +1,4 @@
-package com.rim.handler;
+package com.rim.handler.decoder;
 
 import com.rim.base.Unpack;
 import io.netty.buffer.ByteBuf;

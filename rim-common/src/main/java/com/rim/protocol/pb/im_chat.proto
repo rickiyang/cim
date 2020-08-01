@@ -72,60 +72,15 @@ message ImChatBody {
 
 //1v1消息返回体
 message One2OneImChatResp {
-    ChatHeader header = 1; //请求头
-    int32 code = 2; //返回码
-    string message = 3; //提示
+    int32 code = 1; //返回码
+    string message = 2; //提示
 }
 
-//1对多请求
-message One2MoreImChatReq {
-
-    ChatHeader header = 1; //请求头
-    One2MoreChatBody body = 2; //请求体
-}
-
-//1对多
-message One2MoreChatBody {
-    string reqId = 1; //消息序列号
-    int64 sendUid = 2; //发送者
-    repeated int64 recvUids = 3; //接收者
-    string content = 4; //消息内容
-    int64 sendTimeStamp = 5; //客户端发送消息时间戳
-}
-
-//1v多消息返回体
-message One2MoreImChatResp {
-    ChatHeader header = 1; //请求头
-    int32 code = 2; //返回码
-    string message = 3; //提示
-}
-
-//群聊请求
-message GroupImChatReq {
-    ChatHeader header = 1; //请求头
-    GroupChatBody body = 2; //请求体
-}
-
-//群聊
-message GroupChatBody {
-    string reqId = 1; //消息序列号
-    string groupId = 2; //群id
-    int64 sendUid = 3; //发送者
-    string content = 4; //消息内容
-    int64 sendTimeStamp = 5; //客户端发送消息时间戳
-}
-
-//群聊消息返回体
-message GroupImChatResp {
-    ChatHeader header = 1; //请求头
-    int32 code = 2; //返回码
-    string message = 3; //提示
-}
 
 
 //坑：枚举类型：不支持一个proto文件中，多个枚举中定义相同的枚举常量名
 //消息大类：心跳消息，正文消息
-enum AckEnum {
+enum BigTypeEnum {
     UNKNOWN1 = 0;//proto3必须要有这个0,但实际用不到
     LOGIN_REQ = 1;// 登录包
     PING = 2;//心跳包
@@ -134,7 +89,7 @@ enum AckEnum {
 }
 
 //文本消息，图片消息，语音消息，视频消息
-enum ContentTypeEnum {
+enum SmallTypeEnum {
     UNKNOWN2 = 0;
     TEXT = 1;//普通文本消息
     PIC = 2;//图片消息

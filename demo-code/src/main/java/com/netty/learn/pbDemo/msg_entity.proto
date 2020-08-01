@@ -1,5 +1,5 @@
 syntax = "proto3";
-package com.rickiyang.learn.pbDemo;
+package com.netty.learn.pbDemo;
 option objc_class_prefix = "MsgEntity"; // OC专用，指定类前缀，其他语言不生效
 
 message MsgBodyReq {

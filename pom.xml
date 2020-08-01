@@ -25,6 +25,7 @@
         <module>rim-common</module>
         <module>rim-server</module>
         <module>rim-client</module>
+        <module>demo-code</module>
     </modules>
 
     <dependencies>

@@ -1,7 +1,9 @@
 package com.rim.rimserver.server;
 
-import com.rim.handler.CimDecoder;
-import com.rim.handler.CimEncoder;
+import com.rim.handler.decoder.CimDecoder;
+import com.rim.handler.decoder.ProtoBufDecoder;
+import com.rim.handler.encoder.CimEncoder;
+import com.rim.handler.encoder.ProtoBufEncoder;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelInitializer;
 import io.netty.handler.timeout.IdleStateHandler;
@@ -19,9 +21,11 @@ public class NettyServerHandlerInitializer extends ChannelInitializer<Channel> {
     protected void initChannel(Channel ch) throws Exception {
         ch.pipeline()
                 .addLast(new CimDecoder())
+                .addLast(new ProtoBufDecoder())
                 .addLast(new CimEncoder())
+                .addLast(new ProtoBufEncoder())
                 //空闲检测
-                .addLast(new IdleStateHandler(15, 0, 0, TimeUnit.SECONDS))
+                .addLast(new IdleStateHandler(100, 0, 0, TimeUnit.SECONDS))
                 .addLast(new ServerIdleStateHandler())
                 .addLast(new NettyServerHandler());
     }

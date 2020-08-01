@@ -6,6 +6,7 @@ import com.rim.message.HeartBeatPacket;
 import com.rim.message.ImChat;
 import com.rim.message.ImChatConstants;
 import com.rim.message.ImChatConverter;
+import io.netty.channel.Channel;
 import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
@@ -25,6 +26,7 @@ public class NettyServerHandler extends SimpleChannelInboundHandler<Unpack> {
         String req = pack.getString();
         log.info("receive client message,req = {}", req);
         ImChat imChat = JSON.parseObject(req, ImChat.class);
+
         switch (imChat.getImHeader().getBType()) {
             case ImChatConstants.BigTypeEnum.PING:
                 //回应pong
@@ -36,7 +38,6 @@ public class NettyServerHandler extends SimpleChannelInboundHandler<Unpack> {
                 //todo 发送消息
             default:
         }
-
     }
 
     @Override

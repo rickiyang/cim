@@ -47,7 +47,6 @@ public class NettyServer {
                 .childOption(ChannelOption.SO_KEEPALIVE, true)
                 //将小的数据包包装成更大的帧进行传送，提高网络的负载
                 .childOption(ChannelOption.TCP_NODELAY, true)
-
                 .childHandler(new NettyServerHandlerInitializer());
         ChannelFuture future = bootstrap.bind().sync();
         if (future.isSuccess()) {

@@ -58,5 +58,6 @@ public class NettyClient {
             }
         });
         socketChannel = (SocketChannel) future.channel();
+        socketChannel.writeAndFlush(ImChatConverter.messageToByteBuf(HeartBeatPacket.ping("1")));
     }
 }
